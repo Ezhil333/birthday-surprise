@@ -1322,20 +1322,27 @@ if (page === "feedback") {
             <button
               className="send-feedback-button"
               onClick={() => {
-                const message =
-                  document.getElementById("feedback-message").value;
+              const message = document
+                .getElementById("feedback-message")
+                ?.value;
 
-                const subject =
-                  "My Birthday Surprise Experience ❤️";
+              if (!message || message.trim() === "") {
+                alert("Please write your thoughts first 😊❤️");
+                return;
+              }
 
-                const body =
-                  `Hey bro! ❤️\n\n${message}`;
+              const subject = "My thoughts about your Birthday Surprise ❤️";
 
-                window.location.href =
-                  `mailto:ezhilvendhan63@gmail.com?subject=${encodeURIComponent(
-                    subject
-                  )}&body=${encodeURIComponent(body)}`;
-              }}
+              const body = `Hey Ezhil! ❤️
+
+            Here are my thoughts about your surprise:
+
+            ${message}
+
+            ❤️`;
+
+              window.location.href = `mailto:ezhilvendhan63@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            }}
             >
               Send Me Your Thoughts 💌
             </button>
