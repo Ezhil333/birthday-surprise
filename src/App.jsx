@@ -1341,12 +1341,9 @@ if (page === "feedback") {
 
             ❤️`;
 
-              window.open(
-                `https://mail.google.com/mail/?view=cm&fs=1&to=ezhilvendhan63@gmail.com&su=${encodeURIComponent(
+              window.location.href = `mailto:ezhilvendhan63@gmail.com?subject=${encodeURIComponent(
                   subject
-                )}&body=${encodeURIComponent(body)}`,
-                "_blank"
-              );
+                )}&body=${encodeURIComponent(body)}`;
             }}
             >
               Send Me Your Thoughts 💌
