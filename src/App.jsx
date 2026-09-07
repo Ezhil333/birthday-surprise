@@ -1341,9 +1341,24 @@ if (page === "feedback") {
 
             ❤️`;
 
-              window.location.href = `mailto:ezhilvendhan63@gmail.com?subject=${encodeURIComponent(
+              const email = "ezhilvendhan63@gmail.com";
+
+              const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+              if (isMobile) {
+                // 📱 Mobile → email app
+                window.location.href = `mailto:${email}?subject=${encodeURIComponent(
                   subject
                 )}&body=${encodeURIComponent(body)}`;
+              } else {
+                // 💻 Computer → Gmail in browser
+                window.open(
+                  `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(
+                    subject
+                  )}&body=${encodeURIComponent(body)}`,
+                  "_blank"
+                );
+              }
             }}
             >
               Send Me Your Thoughts 💌
